@@ -1,0 +1,17 @@
+.loading {
+  text-align: center;
+  margin-top: 10rem;
+  font-size: 2em;
+}
+
+.title {
+  margin: 1rem 0rem 1rem 2rem;
+  font-family: Montserrat;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: 6fr 6fr;
+  gap: 1rem;
+  margin-block: 3rem;
+}

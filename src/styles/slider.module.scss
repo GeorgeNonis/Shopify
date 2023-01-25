@@ -1,0 +1,79 @@
+@mixin topAbs {
+  top: 50%;
+  position: absolute;
+}
+
+@mixin hoverEffect {
+  svg {
+    transition: all 500ms;
+    &:hover {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}
+
+.rightarrow {
+  @include topAbs;
+  right: -50px;
+  @include hoverEffect;
+}
+
+.leftarrow {
+  @include topAbs;
+  left: -50px;
+  @include hoverEffect;
+}
+
+.main {
+  height: 30vh;
+  width: 50%;
+  margin-top: 6rem;
+  position: relative;
+  margin-inline: auto;
+  border-radius: 2rem;
+  a {
+    animation: fadeIn 5s;
+    text-decoration: none;
+    color: black;
+    &:visited {
+      text-decoration: none;
+    }
+  }
+}
+
+.category {
+  color: white;
+  font-size: 3rem;
+  font-family: Montserrat;
+  text-transform: capitalize;
+  animation: fadeIn 1s;
+  margin-inline: auto;
+  border-radius: 80px;
+  height: 100%;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  @include hoverEffect;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.display {
+  display: none;
+}
