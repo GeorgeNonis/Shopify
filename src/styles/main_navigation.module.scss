@@ -1,3 +1,20 @@
+@import "./mixins.module.scss";
+
+@mixin hoverEffect {
+  box-shadow: 1px 1px 5px 3px #9af4ff !important;
+  transform: scale(1.2);
+  background-color: white;
+}
+
+@mixin hoverCart {
+  &:hover {
+    @include hoverEffect;
+    .sum {
+      @include hoverEffect;
+    }
+  }
+}
+
 .main {
   padding: 1rem 1rem;
   background-color: #57fafa57;
@@ -8,17 +25,26 @@
     width: 1.5rem;
   }
   i {
+    position: relative;
     padding: 1em;
+    margin-right: 1em;
     border-radius: 50%;
     transition: all 500ms;
-    &:hover {
-      border-radius: 50%;
-      padding: 1em;
-      background-color: white;
-      box-shadow: 1px 1px 5px 3px #9a9aff;
-      transform: scale(1.2);
-    }
+    @include hoverCart();
   }
+}
+
+.sum {
+  position: absolute;
+  bottom: -2rem;
+  right: -0.7rem;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background-color: #9af4ff;
 }
 
 .links {
@@ -32,8 +58,7 @@
     text-decoration: none;
     color: black;
     transition: all 500ms;
-    &:hover {
-      color: #7babff;
+    @include transition(1.1) {
     }
   }
 }

@@ -24,7 +24,7 @@ const Slider: React.FC<Props> = ({ categories }) => {
 
     const timer = setTimeout(() => {
       setDisplay(false);
-    }, 0);
+    }, 50);
 
     return () => clearTimeout(timer);
   }, [index]);
@@ -48,7 +48,7 @@ const Slider: React.FC<Props> = ({ categories }) => {
       className={mainStyle}
       style={{
         // display: display,
-        background: `url(../../public/${picture[index]}.jpg)`,
+        background: `url(/${picture[index]}.jpg)`,
       }}
     >
       <div className={styles.leftarrow}>

@@ -10,8 +10,8 @@ interface Category {
 const CategoryPage = () => {
   const { category } = useLoaderData() as Category;
   const params = useParams();
-  console.log(category);
-  console.log("Im in the page");
+  // console.log(category);
+  // console.log("Im in the page");
   return (
     <div>
       <Suspense fallback={<p className={styles.loading}>Loading....</p>}>

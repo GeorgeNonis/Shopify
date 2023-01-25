@@ -19,11 +19,11 @@ const getCategory = async (id: string) => {
   return axios
     .get(`https://fakestoreapi.com/products/category/${id}`)
     .then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       return res.data;
     })
     .catch((err) => {
-      console.log({ err });
+      // console.log({ err });
     });
 };
 
@@ -38,4 +38,23 @@ const CURRENCY_FORMATER = new Intl.NumberFormat(undefined, {
 
 export const formatPrice = (number: number) => {
   return CURRENCY_FORMATER.format(number);
+};
+
+const formatAsPercentage = (num: number): string => {
+  return new Intl.NumberFormat("default", {
+    style: "percent",
+    // minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(num / 5);
+};
+
+export const stars = (n: number) => {
+  const gold = formatAsPercentage(n);
+  // const black =
+  return {
+    background: `linear-gradient(to right, gold ${gold}, black 10%)`,
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    color: "transparent",
+  };
 };

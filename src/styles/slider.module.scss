@@ -26,6 +26,7 @@
 }
 
 .main {
+  animation: fadeIn 1s;
   height: 30vh;
   width: 50%;
   margin-top: 6rem;
@@ -33,7 +34,7 @@
   margin-inline: auto;
   border-radius: 2rem;
   a {
-    animation: fadeIn 5s;
+    animation: fadeIn 1s;
     text-decoration: none;
     color: black;
     &:visited {
@@ -47,7 +48,6 @@
   font-size: 3rem;
   font-family: Montserrat;
   text-transform: capitalize;
-  animation: fadeIn 1s;
   margin-inline: auto;
   border-radius: 80px;
   height: 100%;

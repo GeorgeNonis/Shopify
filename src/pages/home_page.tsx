@@ -9,7 +9,7 @@ interface Categories {
 
 const HomePage = () => {
   const { categories } = useLoaderData() as Categories;
-  console.log(categories);
+  // console.log(categories);
   return (
     <div>
       <h1 className={styles.intro}>Welcome to the Home Page</h1>

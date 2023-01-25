@@ -1,33 +1,19 @@
-@mixin mainStarStyle {
-  @include transition;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  -webkit-background-clip: text;
-}
-
-@mixin transition {
-  transition: all 500ms;
-  &:hover {
-    transform: scale(1.3);
-  }
-}
-
+@import "./mixins.module.scss";
 .main {
   display: grid;
   gap: 1rem;
   align-items: center;
   justify-items: center;
   h2 {
-    font-size: 1em;
-    width: 70%;
-    text-align: center;
-    align-self: baseline;
+    @include title;
   }
   img {
-    width: 10rem;
-    max-height: 15rem;
-    mix-blend-mode: multiply;
-    @include transition;
+    @include img;
+  }
+  button {
+    width: 40%;
+    @include addButton;
+    @include transition(1.2);
   }
 }
 
@@ -36,36 +22,7 @@
   grid-auto-flow: column;
   justify-content: space-around;
   width: 100%;
-  span:nth-of-type(1) {
-    @include transition;
+  span {
+    @include transition(1.3);
   }
-}
-
-.stars {
-  @include mainStarStyle;
-}
-
-.one {
-  //   @include mainStarStyle;
-  background: linear-gradient(to right, gold 20%, black 10%);
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  -webkit-background-clip: text;
-}
-
-.two {
-  background: linear-gradient(to right, gold 40%, black 10%);
-  @include mainStarStyle;
-}
-.three {
-  background: linear-gradient(to right, gold 60%, black 10%);
-  @include mainStarStyle;
-}
-.four {
-  background: linear-gradient(to right, gold 80%, black 10%);
-  @include mainStarStyle;
-}
-.five {
-  background: linear-gradient(to right, gold 100%, black 0%);
-  @include mainStarStyle;
 }
