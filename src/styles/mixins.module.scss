@@ -33,3 +33,10 @@
   text-align: center;
   align-self: baseline;
 }
+
+@mixin spinTransform {
+  transition: transform 0.7s ease-in-out;
+  &:hover {
+    transform: rotate(360deg);
+  }
+}

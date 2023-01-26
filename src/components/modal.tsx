@@ -4,12 +4,18 @@ import { formatPrice, stars } from "../utilities/utilities";
 import styles from "../styles/modal.module.scss";
 import { AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
 import { displayHandler } from "../store/item";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { addItem } from "../store/cart";
+import { Item } from "./items";
 
 const Modal = () => {
   const [value, setValue] = useState<number>(1);
-  const item = useSelector((state: IRootState) => state.item.details);
+  const {
+    item: { details: item },
+    cart,
+  } = useSelector((state: IRootState) => state);
+  const [bounce, setBounce] = useState<boolean>(false);
+  const [present, setPresent] = useState(false);
   const dispatch = useDispatch();
 
   const closeModal = () => {
@@ -20,11 +26,28 @@ const Modal = () => {
   const optionHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setValue(+e.target.value);
   };
-  const add = () => {
-    dispatch(addItem());
+  const add = (item: Item, value: number) => {
+    dispatch(addItem({ item, value }));
   };
 
-  // console.log(value);
+  const btnStyle = `${bounce ? styles.bounce : ""}`;
+
+  useEffect((): any => {
+    if (!present) {
+      setPresent(true);
+      return;
+    }
+    setBounce(true);
+
+    const timer = setTimeout(() => {
+      setBounce(false);
+    }, 300);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [cart.sum]);
+
   return (
     <>
       <div className={styles.background} onClick={closeModal}></div>
@@ -41,7 +64,6 @@ const Modal = () => {
           </div>
         </div>
         <div>
-          {/* <input type="number" name="number" id="number" /> */}
           <select name="number" id="number" onChange={optionHandler}>
             {[...Array(10).keys()].map((i) => {
               if (i === 0) return;
@@ -52,7 +74,13 @@ const Modal = () => {
               );
             })}
           </select>
-          <button disabled={value === 0} onClick={add}>
+          <button
+            disabled={value === 0}
+            onClick={() => {
+              add(item, value);
+            }}
+            className={btnStyle}
+          >
             <AiOutlinePlus />
             Add to cart
           </button>

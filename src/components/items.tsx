@@ -19,7 +19,7 @@ export interface Item {
 }
 export interface Top {
   // items: Item;
-  items: [Item];
+  items: Array<Item>;
 }
 
 const Items = ({ items }: Top) => {

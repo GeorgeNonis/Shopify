@@ -1,0 +1,94 @@
+@import "./mixins.module.scss";
+
+.background {
+  position: fixed;
+  top: 0;
+  right: -4000px;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.75);
+  transition-property: right;
+  transition-duration: 0.5s;
+  overflow: hidden;
+}
+
+.intro {
+  display: inline;
+}
+
+.main {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -1000px;
+  z-index: 30;
+  width: 50%;
+  padding: 2rem;
+  background-color: white;
+  transition-property: right;
+  transition-duration: 1s;
+  overflow-y: scroll;
+}
+.close {
+  float: right;
+  @include spinTransform;
+}
+
+.items {
+  display: grid;
+  gap: 3em;
+  align-items: center;
+  justify-items: center;
+  margin-top: 2rem;
+  h3 {
+    @include title;
+  }
+  img {
+    @include img;
+  }
+}
+
+.item {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  gap: 1em;
+}
+
+.title {
+  display: grid;
+  grid-auto-flow: column;
+  align-content: center;
+  justify-content: space-between;
+}
+.remove {
+  @include transition(1.4);
+}
+
+.actions {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 5fr auto auto 5fr;
+  gap: 1em;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  button {
+    @include addButton;
+    width: 80%;
+    @include transition(1.15);
+  }
+}
+.empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+}
+
+.show {
+  right: 0;
+}

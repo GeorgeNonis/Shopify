@@ -2,20 +2,25 @@ import ReactDOM from "react-dom";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import { IRootState } from "../store/store";
+import Cart from "./cart";
 import { MainNavigation } from "./main_navigation";
 import Modal from "./modal";
 
 const RootLayout = () => {
-  const { display } = useSelector((state: IRootState) => state.item);
+  const { item, cart } = useSelector((state: IRootState) => state);
   return (
     <>
       <MainNavigation />
       <main>
-        {display &&
+        {item.display &&
           ReactDOM.createPortal(
             <Modal />,
             document.getElementById("modal") as HTMLElement
           )}
+        {ReactDOM.createPortal(
+          <Cart />,
+          document.getElementById("cart") as HTMLElement
+        )}
         <Outlet />
       </main>
     </>

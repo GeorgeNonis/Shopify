@@ -1,25 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { Item } from "../components/items";
 
-export type State = {
+type State = {
   display: boolean;
-  details: {
-    title: string;
-    price: number;
-    image: string;
-    rating: {
-      rate: number;
-    };
-  };
+  details: Item;
 };
 
 const initialState: State = {
   display: false,
   details: {
+    category: "",
+    id: 0,
     title: "",
     price: 0,
     image: "",
+    description: "",
     rating: {
       rate: 0,
+      count: 0,
     },
   },
 };

@@ -27,10 +27,7 @@
   svg:nth-of-type(1) {
     justify-self: end;
     @include transition(1.5);
-    transition: transform 0.7s ease-in-out;
-    &:hover {
-      transform: rotate(360deg);
-    }
+    @include spinTransform;
   }
   div:nth-of-type(1) {
     display: grid;
@@ -58,7 +55,7 @@
   button {
     width: 50%;
     @include addButton;
-    @include transition(1.1);
+    // @include transition(1.1);
   }
 }
 
@@ -69,5 +66,27 @@
   width: 100%;
   span {
     @include transition(1.3);
+  }
+}
+
+.bounce {
+  animation: bump 300ms ease-out;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
