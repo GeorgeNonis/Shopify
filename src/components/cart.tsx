@@ -40,7 +40,7 @@ const Cart = () => {
       <div className={background} onClick={showCart}></div>
       <div className={main}>
         <h3 className={styles.intro}>Your Cart</h3>{" "}
-        <AiOutlineClose className={styles.close} />
+        <AiOutlineClose className={styles.close} onClick={showCart}/>
         {cart.sum === 0 ? (
           <h3 className={styles.empty}>Your Cart is empty..porque puto?</h3>
         ) : (

@@ -50,7 +50,6 @@ const formatAsPercentage = (num: number): string => {
 
 export const stars = (n: number) => {
   const gold = formatAsPercentage(n);
-  // const black =
   return {
     background: `linear-gradient(to right, gold ${gold}, black 10%)`,
     WebkitBackgroundClip: "text",

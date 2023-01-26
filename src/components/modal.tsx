@@ -32,7 +32,7 @@ const Modal = () => {
 
   const btnStyle = `${bounce ? styles.bounce : ""}`;
 
-  useEffect((): any => {
+  useEffect(() => {
     if (!present) {
       setPresent(true);
       return;
