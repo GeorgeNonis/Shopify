@@ -1,0 +1,44 @@
+@mixin position {
+  position: absolute;
+  right: 3em;
+}
+
+.content {
+  display: grid;
+  gap: 1em;
+  label {
+    display: grid;
+    grid-auto-flow: column;
+    position: relative;
+    span {
+      @include position;
+    }
+  }
+  input {
+    padding: 0.3em;
+    outline: none;
+  }
+
+  .check {
+    color: lime;
+  }
+  .xmark {
+    color: red;
+  }
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  text-indent: -999em;
+}
+
+.warning {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}

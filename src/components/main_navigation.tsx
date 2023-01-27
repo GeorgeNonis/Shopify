@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import styles from "../styles/main_navigation.module.scss";
 import { IRootState } from "../store/store";
@@ -29,9 +29,9 @@ export const MainNavigation = () => {
           className={({ isActive }) => {
             return isActive ? styles.active : undefined;
           }}
-          to={"store"}
+          to={"profile"}
         >
-          Store
+          Profile
         </NavLink>
         <NavLink
           className={({ isActive }) => {
@@ -42,6 +42,14 @@ export const MainNavigation = () => {
           About
         </NavLink>
       </div>
+      <NavLink
+        to={"signup"}
+        className={({ isActive }) => {
+          return isActive ? `${styles.active} ${styles.signup}` : styles.signup;
+        }}
+      >
+        Sign up
+      </NavLink>
       <i onClick={showCart}>
         <FaShoppingCart />
         <span className={styles.sum}>{sum}</span>

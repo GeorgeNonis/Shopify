@@ -1,0 +1,25 @@
+@import "./mixins.module.scss";
+
+.content {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 1em;
+  margin-inline: auto;
+  margin-top: 2em;
+  h3 {
+    @include title;
+  }
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  width: 50%;
+
+  button {
+    @include addButton;
+    grid-row: 5;
+  }
+}

@@ -18,6 +18,7 @@
   font-size: 0.9em;
   font-weight: 600;
   background-color: #c6fdfd;
+  @content;
 }
 
 @mixin img {
@@ -32,6 +33,7 @@
   width: 70%;
   text-align: center;
   align-self: baseline;
+  @content;
 }
 
 @mixin spinTransform {
