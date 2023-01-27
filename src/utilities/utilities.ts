@@ -26,7 +26,6 @@ const getCategory = async (id: string) => {
       // console.log({ err });
     });
 };
-
 export const loadCategory = (params: { cid: string }) => {
   return defer({ category: getCategory(params.cid) });
 };
