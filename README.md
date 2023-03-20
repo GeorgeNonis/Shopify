@@ -1,9 +1,9 @@
 ### <h1>:exclamation: Minimalistic E-shop :exclamation:</h1>
 
-### Target of E-shop
+### Target of E-shop :triangular_flag_on_post:
 
 <p>
-      <h3>Main target is to have a very simple E-shop with a dashboard. Nothing fancy until now and no complexity</h3>
+      <h3>Main target is to have a very simple E-shop with an Admin dashboard. Nothing fancy until now and no complexity</h3>
       <h3>Havent used and CSS libraries or any other external React/JS libraries for the reason that I want </h3>
       <h3>to enhance my Javascript skills and Css skills.:muscle:</h3>
 
@@ -26,11 +26,11 @@
 
 <h3>Havent added any Media Quieries yet:iphone: as you can see it yourself through developer's tool's :wrench:</h3>
 
-### How to install node_modules
+### How to install node_modules :nut_and_bolt:
 
     yarn add
 
-### Comments in the project
+### Comments in the project :page_with_curl:
 
 <h3>Tried my best to add as many comments as I could for further understand:fire:</h3>
     <h3>Any further/additional comments or tips are very welcome,</h3>
