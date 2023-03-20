@@ -9,6 +9,10 @@ interface Categories {
 
 const HomePage = () => {
   const { categories } = useLoaderData() as Categories;
+  /**
+   * For deploying purposes
+   */
+  // const categories = ["electronics", "jewelry", "men", "women"];
   // console.log(categories);
   return (
     <div>

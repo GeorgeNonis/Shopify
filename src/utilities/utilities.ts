@@ -3,7 +3,12 @@ import axios from "axios";
 
 const getCategories = async () => {
   return axios
-    .get("https://fakestoreapi.com/products/categories")
+    .get("https://fakestoreapi.com/products/categories", {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+      },
+    })
     .then((res) => {
       console.log(res.data);
       return res.data;
