@@ -1,15 +1,15 @@
 import { defer } from "react-router-dom";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 
-const getCategories = async () => {
+const getCategories = async <T>() => {
   return axios
-    .get("https://fakestoreapi.com/products/categories", {
+    .get<T>("https://fakestoreapi.com/products/categories", {
       headers: {
         "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
       },
     })
-    .then((res) => {
+    .then((res: AxiosResponse<T>) => {
       console.log(res.data);
       return res.data;
     });
@@ -19,11 +19,11 @@ export const loadCategories = () => {
   return defer({ categories: getCategories() });
 };
 
-const getCategory = async (id: string) => {
+const getCategory = async <T>(id: string) => {
   // You can also use limit(Number) and sort(asc|desc) as a query string to get your ideal results
   return axios
-    .get(`https://fakestoreapi.com/products/category/${id}`)
-    .then((res) => {
+    .get<T>(`https://fakestoreapi.com/products/category/${id}`)
+    .then((res: AxiosResponse<T>) => {
       // console.log(res.data);
       return res.data;
     })
